@@ -1,0 +1,6 @@
+date = { ASCII_DIGIT{4} ~ "-" ~ ASCII_DIGIT{2} ~ "-" ~ ASCII_DIGIT{2} }
+time = { ASCII_DIGIT{2} ~ ":" ~ ASCII_DIGIT{2} ~ ":" ~ ASCII_DIGIT{2} }
+level = { "INFO" | "WARN" | "ERROR" | "DEBUG" }
+message = { (!"\n" ~ ANY)+ }
+
+log_entry = { date ~ " " ~ time ~ " " ~ level ~ " " ~ message }

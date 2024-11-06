@@ -1,0 +1,10 @@
+[package]
+name = "log_parser"
+version = "0.1.0"
+edition = "2021"
+description = "Simple Log Parser that extracts date, time, log level, and message from log entries"
+
+[dependencies]
+anyhow = "1.0.91"
+pest = "2.7.14"
+pest_derive = "2.7.14"
