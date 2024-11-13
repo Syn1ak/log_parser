@@ -1,6 +1,13 @@
-date = { ASCII_DIGIT{4} ~ "-" ~ ASCII_DIGIT{2} ~ "-" ~ ASCII_DIGIT{2} }
-time = { ASCII_DIGIT{2} ~ ":" ~ ASCII_DIGIT{2} ~ ":" ~ ASCII_DIGIT{2} }
-level = { "INFO" | "WARN" | "ERROR" | "DEBUG" }
+year = { ASCII_DIGIT{4} }
+month = { "0" ~ ASCII_DIGIT | "1" ~ '0'..'2' }
+day = { "0" ~ ASCII_DIGIT | '1'..'2' ~ ASCII_DIGIT | "3" ~ '0'..'1' }
+
+date = { year ~ "-" ~ month ~ "-" ~ day }
+time = { ASCII_DIGIT{2} ~ ":" ~ ASCII_DIGIT{2} ~ ":" ~ ASCII_DIGIT{2} ~ (ASCII_ALPHA{3})? }
+level = { "INFO" | "WARN" | "ERROR" | "DEBUG" | "TRACE" | "FATAL" }
+module = { "mod-" ~ ASCII_ALPHA+ }
+request_id = { "req-" ~ ASCII_ALPHANUMERIC+ }
+error_code = { ASCII_DIGIT{3,5} }
 message = { (!"\n" ~ ANY)+ }
 
-log_entry = { date ~ " " ~ time ~ " " ~ level ~ " " ~ message }
+log_entry = { date ~ " " ~ time ~ " " ~ level ~ " " ~ (module ~ " ")? ~ (request_id ~ " ")? ~ (error_code ~ " ")? ~ message }
