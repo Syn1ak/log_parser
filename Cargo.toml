@@ -4,7 +4,7 @@ version = "0.2.0"
 edition = "2021"
 license = "MIT"
 description = "A parser for analyzing structured log files, utilizing the Pest parsing library. `log_parser` extracts components such as date, time, log level, module, request ID, error code, and message from each log entry. This enables efficient log analysis, filtering, and reporting, facilitating troubleshooting and monitoring in complex systems."
-repository = "https://github.com/Syn1ak/log_parser.git"
+repository = "https://github.com/Syn1ak/log_parser_by_syn1ak.git"
 
 [dependencies]
 anyhow = "1.0.91"
