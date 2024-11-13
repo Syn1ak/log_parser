@@ -1,6 +1,6 @@
 use anyhow::{Context, Result};
 use clap::{Arg, Command};
-use log_parser::{Grammar, Rule};
+use log_parser_by_syn1ak::{Grammar, Rule};
 use pest::Parser;
 use std::fs;
 use std::process;

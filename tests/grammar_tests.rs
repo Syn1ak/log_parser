@@ -1,5 +1,5 @@
 use anyhow::{anyhow, Result};
-use log_parser::{Grammar, LogParseError, Rule};
+use log_parser_by_syn1ak::{Grammar, LogParseError, Rule};
 use pest::Parser;
 
 #[test]
