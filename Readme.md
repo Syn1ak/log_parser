@@ -1,14 +1,17 @@
-# log_parser
+# log_parser_by_syn1ak
 
 ## Overview
-`log_parser` is a Rust project designed to parse structured log files. It is built using the Pest parsing library, which enables the extraction of specific components from log entries, such as date, time, log level, and message content.
+
+`log_parser_by_syn1ak` is a Rust project designed to parse structured log files. It is built using the Pest parsing library, which enables the extraction of specific components from log entries, such as date, time, log level, and message content.
 
 ## Parsing Process
+
 The parser works by defining each component of a log entry through distinct grammar rules in Pest, allowing it to identify and extract specific parts of a log. This design enables you to capture structured data from log files, which can be used in log analysis pipelines, monitoring systems, and debugging processes.
 
 ### Grammar Components
 
 Each log entry has the following structure:
+
 ```
 log_entry = { date ~ " " ~ time ~ " " ~ level ~ " " ~ (module ~ " ")? ~ (request_id ~ " ")? ~ (error_code ~ " ")? ~ message }
 ```
@@ -23,7 +26,7 @@ log_entry = { date ~ " " ~ time ~ " " ~ level ~ " " ~ (module ~ " ")? ~ (request
 
 ### Grammar Rule Diagram
 
-Here’s a breakdown of each grammar rule used in `log_parser_rs`:
+Here’s a breakdown of each grammar rule used in `log_parser_by_syn1ak`:
 
 - **Year**: `year = { ASCII_DIGIT{4} }`
 - **Month**: `month = { "0" ~ ASCII_DIGIT | "1" ~ '0'..'2' }`
@@ -39,29 +42,37 @@ Here’s a breakdown of each grammar rule used in `log_parser_rs`:
 ### Example Log Entry
 
 An example log entry that follows this structure might look like:
+
 ```
 2024-11-06 12:00:00UTC INFO mod-network req-12345 404 System started successfully
 ```
 
 ### Usage
+
 By parsing logs in this structured way, applications can perform detailed log analysis and visualization, improving error tracking and debugging processes.
 
 1. **Parsing a Log File**:
    To parse a log file, specify the file path:
+
    ```bash
    cargo run -- <file_path>
    ```
+
    or
+
    ```bash
    make run FILE=<file_path>
    ```
 
 2. **Display Credits**:
    Use the `credits` subcommand to display project information:
+
    ```bash
    cargo run -- credits
    ```
+
    or
+
    ```bash
    make credits
    ```
@@ -78,5 +89,5 @@ By parsing logs in this structured way, applications can perform detailed log an
 
 ### Documentation and Links
 
-- **Crates.io**: [Link to crates.io page]()
-- **Docs.rs**: [Link to docs.rs documentation]()
+- **Crates.io**: [Link to crates.io page](https://crates.io/crates/log_parser_by_syn1ak)
+- **Docs.rs**: [Link to docs.rs documentation](https://docs.rs/log_parser_by_syn1ak/latest/log_parser_by_syn1ak/)
